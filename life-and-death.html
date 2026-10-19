@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 生與死 (Life and Death) 19線支付與四騎士Wild機制實測報告 | Slot Mechanics Lab</title>
+  <meta name="description" content="深入拆解 Hacksaw 生與死 (Life and Death) 老虎機 19 條支付線、末日四騎士 Wild 倍數累加、雙免費遊戲觸發率與 15,000 倍極限派彩機制。">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.8; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #1e293b; background: #fff; }
+    .breadcrumb { font-size: 14px; margin-bottom: 20px; }
+    .breadcrumb a { color: #2563eb; text-decoration: none; }
+    h1 { font-size: 26px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; }
+    h2 { font-size: 20px; margin-top: 35px; }
+    a.dofollow-link { color: #2563eb; font-weight: bold; text-decoration: none; border-bottom: 1px dashed #2563eb; }
+    a.dofollow-link:hover { background: #eff6ff; }
+    table { width: 100%; border-collapse: collapse; margin: 25px 0; }
+    th, td { border: 1px solid #cbd5e1; padding: 10px 14px; text-align: left; }
+    th { background: #f8fafc; font-weight: 600; }
+    .box { background: #f1f5f9; border-left: 4px solid #2563eb; padding: 15px; margin: 20px 0; border-radius: 0 4px 4px 0; }
+    footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #e2e8f0; font-size: 14px; color: #64748b; }
+  </style>
+</head>
+<body>
+
+  <nav class="breadcrumb">
+    <a href="index.html">← 返回研究室目錄</a>
+  </nav>
+
+  <article>
+    <h1>2026 生與死 (Life and Death) 19線連線與四騎士Wild分析</h1>
+    
+    <div class="box">
+      <strong>研究概要：</strong> 本專題針對末日暗黑風格老虎機《生與死》（Life and Death）進行 1,000 轉底層機率測試，重點剖析其 19 條固定支付線、末日四騎士 Wild 乘數累計加總，以及「Devastation」與「Reckoning」雙免費遊戲模式的期望值差異。
+    </div>
+
+    <h2>一、 生與死核心玩法與 Wild 倍數運算</h2>
+    <p>不同於隨處支付類型，《生與死》採用標準的 5 軸固定支付線結構。遊戲核心焦點在於盤面出現的末日四騎士 Wild 符號，各自帶有獨立乘數；當單一連線上包含多個四騎士符號時，倍數將直接「相加後結算」，能瞬間拉高基礎符號的派彩上限。剛接觸這款高壓暗黑機台的玩家，建議先前往 <a class="dofollow-link" href="https://blackbear168.com/game-guides/life-and-death-gameplay-guide" target="_blank">生與死老虎機規則與試玩教學</a> 熟悉支付線分佈與特殊轉輪（Death Reels）之運作邏輯。</p>
+
+    <h2>二、 機台核心數據與規格參數</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>評測項目</th>
+          <th>生與死 (Life & Death) 數值</th>
+          <th>機制說明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>最高派彩倍數</td>
+          <td>15,000x</td>
+          <td>四騎士頂級倍數疊加全線連線極限值</td>
+        </tr>
+        <tr>
+          <td>支付線規格</td>
+          <td>19 條固定賠率線</td>
+          <td>由左至右相鄰軸連續判定</td>
+        </tr>
+        <tr>
+          <td>官方預設 RTP</td>
+          <td>96.36%</td>
+          <td>中高波動度機率模型</td>
+        </tr>
+        <tr>
+          <td>免費旋轉模式</td>
+          <td>雙紅利模式</td>
+          <td>包含 Devastation（常規強化）與更高階的 Reckoning（鎖定強化）</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>三、 盤面週期訊號與選台原則</h2>
+    <p>《生與死》具備鮮明的高波動特色，在連續轉動中可透過以下特徵判斷機台活性：</p>
+    <ul>
+      <li><strong>吐分期徵兆：</strong> 在 15 轉之內，頻繁在第 2、3、4 軸出現帶有倍數的四騎士 Wild 符號，且皆有串連第 1 軸的主題符號達成實質連線；若 Scatter 符號頻繁出現兩顆以上並伴隨特殊音效，代表進入免費遊戲的權重已處於高檔。</li>
+      <li><strong>吃分期警訊：</strong> 盤面長達 25 轉以上僅開出分散的單一 Wild 且未形成任何連線，低階卡牌符號消除頻率極低；若連續出現空轉，表示機台處於吸收籌碼週期，建議調降注碼或更換機台。</li>
+    </ul>
+
+    <h2>四、 資金防線與實戰總結</h2>
+    <p>由於固定支付線機台在平轉時的命中率（Hit Frequency）通常較隨處支付更考驗耐心，建議進場本金至少設定為單轉金額的 250 倍。在平轉累積到小獎金回血後，再視情況衡量是否搭配模式購買功能。更多主流電子機台攻略與詳細機制評測，可造訪 <a class="dofollow-link" href="https://blackbear168.com/" target="_blank">黑熊娛樂城</a> 官方技術專欄查閱最新數據。</p>
+  </article>
+
+  <footer>
+    <p>© 2026 Slot Mechanics Open-Source Project | <a href="index.html">返回首頁目錄</a></p>
+  </footer>
+
+</body>
+</html>
