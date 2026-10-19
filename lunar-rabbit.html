@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 月兔 (Lunar Rabbit) 集群支付與進度條升級實測報告 | Slot Mechanics Lab</title>
+  <meta name="description" content="深入解析月兔 (Lunar Rabbit) 老虎機 Cluster Pays 集群消除、瀑布連消機制、Feature Metre 進度條累積與巨大月兔 Wild 爆發邏輯。">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.8; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #1e293b; background: #fff; }
+    .breadcrumb { font-size: 14px; margin-bottom: 20px; }
+    .breadcrumb a { color: #2563eb; text-decoration: none; }
+    h1 { font-size: 26px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; }
+    h2 { font-size: 20px; margin-top: 35px; }
+    a.dofollow-link { color: #2563eb; font-weight: bold; text-decoration: none; border-bottom: 1px dashed #2563eb; }
+    a.dofollow-link:hover { background: #eff6ff; }
+    table { width: 100%; border-collapse: collapse; margin: 25px 0; }
+    th, td { border: 1px solid #cbd5e1; padding: 10px 14px; text-align: left; }
+    th { background: #f8fafc; font-weight: 600; }
+    .box { background: #f1f5f9; border-left: 4px solid #2563eb; padding: 15px; margin: 20px 0; border-radius: 0 4px 4px 0; }
+    footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #e2e8f0; font-size: 14px; color: #64748b; }
+  </style>
+</head>
+<body>
+
+  <nav class="breadcrumb">
+    <a href="index.html">← 返回研究室目錄</a>
+  </nav>
+
+  <article>
+    <h1>2026 月兔 (Lunar Rabbit) Feature Metre 進度條機制報告</h1>
+    
+    <div class="box">
+      <strong>研究概要：</strong> 本專題針對東方奇幻風格老虎機《月兔》（Lunar Rabbit）進行 1,000 轉實機運算採樣，重點剖析其 Cluster Pays（集群支付）判定、瀑布式連續消除手感、Feature Metre 能量條階梯式升級，以及最終觸發 3x3 巨大月兔 Wild 的爆發機率曲線。
+    </div>
+
+    <h2>一、 月兔核心玩法與進度條升級機制</h2>
+    <p>《月兔》採用 7x7 大盤面的「集群支付」系統，只要任意位置出現 5 個以上相鄰的同色胡蘿蔔或玉兔符號即可消除。每次消除的符號數量皆會即時注入右側的「Feature Metre」能量條中。隨著單輪轉動內消除總數達到指定階梯，能量條將依序釋放特殊符號變換、隨機百搭投放，甚至召喚佔據多格盤面的巨大 Wild。初次接觸這款遊戲的玩家，建議先前往 <a class="dofollow-link" href="https://blackbear168.com/game-guides/yue-tu-gameplay-guide" target="_blank">月兔老虎機集群支付解析</a> 熟悉瀑布消除節奏與能量條集滿條件，以建立清晰的選台邏輯。</p>
+
+    <h2>二、 機台核心數據與規格參數</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>評測項目</th>
+          <th>月兔 (Lunar Rabbit) 實測參數</th>
+          <th>機制說明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>盤面規格與玩法</td>
+          <td>7 軸 7 行大盤面</td>
+          <td>集群支付 (Cluster Pays)＋瀑布連消 (Cascading)</td>
+        </tr>
+        <tr>
+          <td>核心進度系統</td>
+          <td>Feature Metre 能量條</td>
+          <td>單局連鎖累積消除符號數量，分段解鎖特殊增益</td>
+        </tr>
+        <tr>
+          <td>終極爆發符號</td>
+          <td>巨大月兔 Wild (最高 3x3)</td>
+          <td>集滿最高能量階梯釋放，覆蓋 9 格盤面達成全屏級別連鎖</td>
+        </tr>
+        <tr>
+          <td>波動度評級</td>
+          <td>中高波動 (Medium-High)</td>
+          <td>平轉具備良好連鎖回血能力，主要大獎仰賴能量條完全釋放</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>三、 實戰訊號判斷：吐分期與吃分期特徵</h2>
+    <p>機台底層依循隨機數生成器（RNG）運行，但在連續轉動觀察中仍呈現明確的活躍週期：</p>
+    <ul>
+      <li><strong>吐分期徵兆：</strong> 在 15 轉平轉內，頻繁出現 4 連消以上的瀑布式滾動，且單局消除符號量能多次突破 Feature Metre 的第 2 階段（釋放隨機百搭）；若盤面上高階金胡蘿蔔頻繁形成 8 顆以上的大集群消除，代表機台處於動態釋放區間。</li>
+      <li><strong>吃分期警訊：</strong> 盤面長達 20 轉以上僅能達成 1 次 5 顆低階符號消除便立即中斷，能量條甚至連第 1 階段門檻都無法觸碰；若持續出現深度空轉與零散符號，表示機台正處於籌碼吸收週期，建議調降注額或換台。</li>
+    </ul>
+
+    <h2>四、 資金防線與實戰總結</h2>
+    <p>由於集群大盤面機台的勝率高度仰賴「單局消除雪球效應」，建議進場本金至少設定為單轉金額的 200 至 250 倍。在平轉累積小獎回血的同時，觀察能量條充能頻率是否活躍。更多熱門電子老虎機攻略與深入數據評測，歡迎造訪 <a class="dofollow-link" href="https://blackbear168.com/" target="_blank">黑熊娛樂城</a> 官方技術專欄獲取最新分析。</p>
+  </article>
+
+  <footer>
+    <p>© 2026 Slot Mechanics Open-Source Project | <a href="index.html">返回首頁目錄</a></p>
+  </footer>
+
+</body>
+</html>
